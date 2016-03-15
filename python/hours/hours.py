@@ -67,3 +67,13 @@ send = raw_input("Would you like to send this?(Y/N) ")
 if send is 'y' or send is 'Y':
 	command_line = 'echo -e "%s" | mail -s "%s" sb@techsquare.com' % (table, subject)
 	subprocess.call(command_line, shell=True)
+
+#add to git repo
+command_line = 'git add total.txt'
+subprocess.call(command_line, shell=True)
+
+command_line = 'git commit -m "~~~"'
+subprocess.call(command_line, shell=True)
+
+command_line = 'git push origin master'
+subprocess.call(command_line, shell=True)
