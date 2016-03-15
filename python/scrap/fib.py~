@@ -1,0 +1,20 @@
+#!/usr/bin/python
+
+#Fibbonacci Sequence
+
+import sys
+
+end = int(sys.argv[1])
+
+#end = int(end)
+num_one = 0
+num_two = 1
+f = 0
+print num_one
+#print num_two
+while f <= end:
+	f = num_one + num_two
+	print f
+	num_one = num_two
+	num_two = f
+
