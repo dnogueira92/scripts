@@ -78,7 +78,7 @@ subprocess.call(command_line, shell=True)
 command_line = 'git push origin master'
 subprocess.call(command_line, shell=True)
 
-shutdown = raw_input("Would you like to send this?(Y/N) ")
+shutdown = raw_input("Would you like to shutdown at this point?(Y/N) ")
 
 if shutdown is 'y' or shutdown is 'Y':
 	command_line = 'shutdown -h now'

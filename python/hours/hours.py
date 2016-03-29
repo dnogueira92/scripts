@@ -81,5 +81,5 @@ subprocess.call(command_line, shell=True)
 shutdown = raw_input("Would you like to shutdown at this point?(Y/N) ")
 
 if shutdown is 'y' or shutdown is 'Y':
-	command_line = 'shutdown -h now'
+	command_line = 'sudo shutdown -h now'
 	subprocess.call(command_line, shell=True)
