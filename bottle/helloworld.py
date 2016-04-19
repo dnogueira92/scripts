@@ -11,13 +11,10 @@ def hello():
 	
 	
 
-	#reservations = os.popen("scontrol show reservations -o).read()
-	reser = os.popen("cat reservations.txt").read()
-
-	res = reser.split()
-
+	#reservation = os.popen("scontrol show reservations -o).read()
+	reservation = os.popen("cat NoRes.txt").read()
 	
-	return template('test', res=res)
+	return template('test', reservation=reservation)
 	
 
 run(host='localhost', port=8080, debug=True)
