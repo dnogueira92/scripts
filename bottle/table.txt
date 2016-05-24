@@ -1,0 +1,44 @@
+
+<table border="1"">
+<tr>
+<th>Reservation Name</th>
+<th>Information</th>
+</tr>
+%	res = reservation.split()
+%	for item in res:
+%   		key, val = item.split("=")
+
+
+		%if key == "ReservationName":
+%			resname = val
+%			list = []
+<tr>
+<td>{{resname}}</td>
+		%elif (key == "StartTime") or (key == "EndTime") or (key == "Nodes") or (key == "Users") or (key == "State"):
+%			list.append(key + ": " + val)
+
+%if (key == "State") and (val == "ACTIVE"):
+<td>
+<font color=#FF0000>
+
+%	for item in list:
+	{{item}} | 
+
+%end
+</font>
+</td>
+%elif (key == "State"):
+<td>
+<font color=#005600>
+
+%	for item in list:
+	{{item}} | 
+
+%end
+</font>
+</td>
+%end
+%end
+%end
+</tr>			
+</table>

@@ -12,7 +12,7 @@ def hello():
 	
 
 	#reservation = os.popen("scontrol show reservations -o).read()
-	reservation = os.popen("cat NoRes.txt").read()
+	reservation = os.popen("cat reservations.txt").read()
 	
 	return template('test', reservation=reservation)
 	

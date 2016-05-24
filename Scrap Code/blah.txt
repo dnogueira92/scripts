@@ -1,0 +1,22 @@
+<tr>
+<td>{{resname}}</td>
+<td>
+%	for item in list:
+	{{item}}<br>
+%end
+</td>
+</tr>
+
+
+%list = []
+%	for item in words:
+%   		key, val = item.split("=")
+
+
+		%if key == "ReservationName":
+%			resname = val
+		%else:
+%			list.append(key + "= " + val)
+
+%end
+%end

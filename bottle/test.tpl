@@ -18,7 +18,7 @@
 %if(reservation.startswith("No")):
 {{reservation}}
 %else:
-<table border="1"">
+<table border="1">
 <tr>
 <th>Reservation Name</th>
 <th>Information</th>
@@ -41,8 +41,11 @@
 <font color=#FF0000>
 
 %	for item in list:
+%if (item.startswith("State") == False):
 	{{item}} | 
-
+%else:
+	{{item}}
+%end
 %end
 </font>
 </td>
@@ -51,8 +54,11 @@
 <font color=#005600>
 
 %	for item in list:
+%if (item.startswith("State") == False):
 	{{item}} | 
-
+%else:
+	{{item}}
+%end
 %end
 </font>
 </td>
@@ -62,6 +68,7 @@
 </tr>			
 </table>
 %end
+
 
 
 

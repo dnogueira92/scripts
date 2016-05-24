@@ -11,7 +11,7 @@ def hello():
 	
 	
 
-	#reservations = os.popen("scontrol show reservations -o).read()
+	#reservation = os.popen("scontrol show reservations -o).read()
 	reservation = os.popen("cat NoRes.txt").read()
 	
 	return template('test', reservation=reservation)

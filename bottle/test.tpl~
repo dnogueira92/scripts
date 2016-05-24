@@ -11,14 +11,14 @@
 
 <center>
 <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=dnogueira%40intranet.techsquare.com&amp;color=%231B887A&amp;ctz=America%2FNew_York" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
-</center>
+
 
 <br><br><br>
 
 %if(reservation.startswith("No")):
 {{reservation}}
 %else:
-<table border="1"">
+<table border="1">
 <tr>
 <th>Reservation Name</th>
 <th>Information</th>
@@ -41,8 +41,11 @@
 <font color=#FF0000>
 
 %	for item in list:
+%if (item.startswith("State") == False):
 	{{item}} | 
-
+%else:
+	{{item}}
+%end
 %end
 </font>
 </td>
@@ -51,8 +54,11 @@
 <font color=#005600>
 
 %	for item in list:
+%if (item.startswith("State") == False):
 	{{item}} | 
-
+%else:
+	{{item}}
+%end
 %end
 </font>
 </td>
@@ -62,6 +68,7 @@
 </tr>			
 </table>
 %end
+</center>
 
 
 

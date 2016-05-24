@@ -44,6 +44,11 @@ itime_in = convert(time_in)
 itime_out = convert(time_out)
 today = itime_out - itime_in
 
+#Tag
+tag = raw_input("Is this for MGHPCC/INTERN?(Type in tag if not or y for yes) ")
+if tag is 'y' or tag is 'Y':
+	tag = "MGHPCC/INTERN"
+
 #append log and add hours
 print today
 append = raw_input("Would you like to add these hours to the log?(Y/N) ")
@@ -57,7 +62,7 @@ with open('total.txt') as f:
 #confirm information is correct and send email
 subject = 'Hours for %s - %s' %  (day, total)
 
-table = 'dnogueira|%s|%s|%s|%s|%s|MGHPCC/INTERN|Y|N|%s' % (day, time_in, day, time_out, today, work)
+table = 'dnogueira|%s|%s|%s|%s|%s|%s|Y|N|%s' % (day, time_in, day, time_out, today, tag, work)
 
 print subject + '\n'
 print table + '\n'

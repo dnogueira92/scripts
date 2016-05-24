@@ -5,8 +5,9 @@
 import os, sys, subprocess
 
 total = 0
+month = sys.argv[1]
 
-with open("total.txt") as f:
+with open(month) as f:
     for line in f:
         total = float(total) + float(line)
 
